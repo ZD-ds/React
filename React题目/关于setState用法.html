@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Root extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                count: 0,
+            }
+        }
+
+        componentWillMount() {
+            let me = this;
+            me.setState({
+                count: me.state.count + 1,
+            });
+            console.log(me.state.count);//打印 0
+            me.setState({
+                count: me.state.count + 1,
+            });
+            console.log(me.state.count);//打印 0
+            setTimeout(function () {
+                me.setState({
+                    count: me.state.count + 1,
+                });
+                console.log(me.state.count);//打印 2
+
+            }, 0);
+            setTimeout(function () {
+                me.setState({
+                    count: me.state.count + 1,
+                });
+                console.log(me.state.count);//打印 3
+
+            }, 0);
+        }
+
+    }
+
+
+
+
+</script>
+
+</html>
